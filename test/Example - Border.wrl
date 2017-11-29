@@ -39,19 +39,19 @@ Viewpoint {
 }
 
 Example {
-	translation	0 0 0
+	translation 0 0 0
 	border -1
 }
 Example {
-	translation	0 -2 0
+	translation 0 -2 0
 	border 0
 }
 Example {
-	translation	0 -4 0
+	translation 0 -4 0
 	border 0.25
 }
 Example {
-	translation	0 -7 0
+	translation 0 -7 0
 	border 1
 }
 

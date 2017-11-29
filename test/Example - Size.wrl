@@ -20,7 +20,7 @@ PROTO Example [
 				}
 			}
 			geometry RoundedRectangle {
-				size IS	size
+				size IS size
 				border 0.25
 			}
 		}
@@ -40,19 +40,19 @@ Viewpoint {
 
 
 Example {
-	translation	0 0 0
+	translation 0 0 0
 	size -1 1
 }
 Example {
-	translation	0 -2 0
+	translation 0 -2 0
 	size 0 1
 }
 Example {
-	translation	0 -4 0
+	translation 0 -4 0
 	size 1 1
 }
 Example {
-	translation	0 -6 0
+	translation 0 -6 0
 	size 2 1
 }
 
