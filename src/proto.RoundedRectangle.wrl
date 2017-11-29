@@ -1,0 +1,158 @@
+#VRML V2.0 utf8
+
+PROTO RoundedRectangle [
+	exposedField  SFVec2f  size    2 2
+	exposedField  SFFloat  border  1
+	field         SFBool   solid   TRUE
+]{
+	DEF ifs IndexedFaceSet {
+		solid IS solid
+		coord DEF coords Coordinate {}
+		coordIndex [
+			# Rectangles
+			0 1 5 4 0 -1,
+			1 2 6 5 1 -1,
+			2 3 7 6 2 -1,
+			1 8 9 2 1 -1,
+			5 6 11 10 5 -1,
+
+			# Bottom-Left
+			1 0 12 1 -1,
+			1 12 13 1 -1,
+			1 13 14 1 -1,
+			1 14 15 1 -1,
+			1 15 16 1 -1,
+			1 16 17 1 -1,
+			1 17 18 1 -1,
+			1 18 8 1 -1,
+
+			# Bottom-Right
+			2 9 25 2 -1,
+			2 25 24 2 -1,
+			2 24 23 2 -1,
+			2 23 22 2 -1,
+			2 22 21 2 -1,
+			2 21 20 2 -1,
+			2 20 19 2 -1,
+			2 19 3 2 -1,
+
+			# Top Left
+			4 5 32 4 -1,
+			32 5 31 32 -1,
+			31 5 30 31 -1,
+			30 5 29 30 -1,
+			29 5 28 29 -1,
+			28 5 27 28 -1,
+			27 5 26 27 -1,
+			26 5 10 26 -1,
+
+			# Top Right
+			11 6 33 11 -1,
+			33 6 34 33 -1,
+			34 6 35 34 -1,
+			35 6 36 35 -1,
+			36 6 37 36 -1,
+			37 6 38 37 -1,
+			38 6 39 38 -1,
+			39 6 7 39 -1
+		]
+	}
+
+	Script {
+		exposedField  SFFloat  border  IS border
+		exposedField  SFVec2f  size    IS size
+		field         SFNode   ifs     USE ifs
+		field         SFNode   coords  USE coords
+
+		directOutput TRUE
+		url "javascript:
+
+
+		function updateGeometry(){
+			var cleanedBorder = Math.max(0, border);
+			var cleanedWidth = Math.max(0, size[0]);
+			var cleanedHeight = Math.max(0, size[1]);
+
+			var x1 = cleanedWidth / 2;
+			var x2 = x1 + cleanedBorder;
+			var x3 = x1 + (0.19509 * cleanedBorder);
+			var x4 = x1 + (0.382684 * cleanedBorder);
+			var x5 = x1 + (0.55557 * cleanedBorder);
+			var x6 = x1 + (0.707107 * cleanedBorder);
+			var x7 = x1 + (0.83147 * cleanedBorder);
+			var x8 = x1 + (0.92388 * cleanedBorder);
+			var x9 = x1 + (0.980785 * cleanedBorder);
+
+			var y1 = cleanedHeight / 2;
+			var y2 = y1 + cleanedBorder;
+			var y3 = y1 + (0.19509 * cleanedBorder);
+			var y4 = y1 + (0.382684 * cleanedBorder);
+			var y5 = y1 + (0.55557 * cleanedBorder);
+			var y6 = y1 + (0.707107 * cleanedBorder);
+			var y7 = y1 + (0.83147 * cleanedBorder);
+			var y8 = y1 + (0.92388 * cleanedBorder);
+			var y9 = y1 + (0.980785 * cleanedBorder);
+
+			coords.point = new MFVec3f(
+				new SFVec3f(-x2, -y1, 0),
+				new SFVec3f(-x1, -y1, 0),
+				new SFVec3f(x1, -y1, 0),
+				new SFVec3f(x2, -y1, 0),
+
+				new SFVec3f(-x2, y1, 0),
+				new SFVec3f(-x1, y1, 0),
+				new SFVec3f(x1, y1, 0),
+				new SFVec3f(x2, y1, 0),
+
+				new SFVec3f(-x1, -y2, 0),
+				new SFVec3f(x1, -y2, 0),
+
+				new SFVec3f(-x1, y2, 0),
+				new SFVec3f(x1, y2, 0),
+
+				new SFVec3f(-x9, -y3, 0),
+				new SFVec3f(-x8, -y4, 0),
+				new SFVec3f(-x7, -y5, 0),
+				new SFVec3f(-x6, -y6, 0),
+				new SFVec3f(-x5, -y7, 0),
+				new SFVec3f(-x4, -y8, 0),
+				new SFVec3f(-x3, -y9, 0),
+
+				new SFVec3f(x9, -y3, 0),
+				new SFVec3f(x8, -y4, 0),
+				new SFVec3f(x7, -y5, 0),
+				new SFVec3f(x6, -y6, 0),
+				new SFVec3f(x5, -y7, 0),
+				new SFVec3f(x4, -y8, 0),
+				new SFVec3f(x3, -y9, 0),
+
+				new SFVec3f(-x3, y9, 0),
+				new SFVec3f(-x4, y8, 0),
+				new SFVec3f(-x5, y7, 0),
+				new SFVec3f(-x6, y6, 0),
+				new SFVec3f(-x7, y5, 0),
+				new SFVec3f(-x8, y4, 0),
+				new SFVec3f(-x9, y3, 0),
+
+				new SFVec3f(x3, y9, 0),
+				new SFVec3f(x4, y8, 0),
+				new SFVec3f(x5, y7, 0),
+				new SFVec3f(x6, y6, 0),
+				new SFVec3f(x7, y5, 0),
+				new SFVec3f(x8, y4, 0),
+				new SFVec3f(x9, y3, 0)
+			);
+		}
+
+		function border(){}
+		function size(){}
+		function eventsProcessed(){
+			updateGeometry();
+		}
+		function initialize(){
+			updateGeometry();
+		}
+
+		"
+	}
+}
