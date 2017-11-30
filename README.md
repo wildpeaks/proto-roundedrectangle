@@ -4,7 +4,7 @@ VRML PROTO (based on `IndexedFaceSet`) that **generates a rounded rectangle** ge
 
 	EXTERNPROTO RoundedRectangle [
 		exposedField  SFVec2f  size
-		exposedField  SFFloat  border
+		exposedField  SFFloat  radius
 		field         SFBool   solid
 	] "proto.RoundedRectangle.wrl#RoundedRectangle"
 
@@ -26,7 +26,7 @@ Definition:
 
 -------------------------------------------------------------------------------
 
-## Property `border`
+## Property `radius`
 
 **Radius** of the rounded border of the rectangle.
 

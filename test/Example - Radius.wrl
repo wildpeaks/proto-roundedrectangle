@@ -2,13 +2,13 @@
 
 EXTERNPROTO RoundedRectangle [
 	exposedField  SFVec2f  size
-	exposedField  SFFloat  border
+	exposedField  SFFloat  radius
 	field         SFBool   solid
 ] "../src/proto.RoundedRectangle.wrl#RoundedRectangle"
 
 PROTO Example [
 	exposedField  SFVec3f  translation  0 0 0
-	exposedField  SFFloat  border       1
+	exposedField  SFFloat  radius       1
 ]{
 	Transform {
 		translation IS translation
@@ -21,7 +21,7 @@ PROTO Example [
 			}
 			geometry RoundedRectangle {
 				size 2 1
-				border IS border
+				radius IS radius
 			}
 		}
 	}
@@ -29,7 +29,7 @@ PROTO Example [
 
 
 WorldInfo {
-	title "Tests the 'border' property of RoundedRectangle"
+	title "Tests the 'radius' property of RoundedRectangle"
 }
 
 Viewpoint {
@@ -40,18 +40,18 @@ Viewpoint {
 
 Example {
 	translation 0 0 0
-	border -1
+	radius -1
 }
 Example {
 	translation 0 -2 0
-	border 0
+	radius 0
 }
 Example {
 	translation 0 -4 0
-	border 0.25
+	radius 0.25
 }
 Example {
 	translation 0 -7 0
-	border 1
+	radius 1
 }
 
